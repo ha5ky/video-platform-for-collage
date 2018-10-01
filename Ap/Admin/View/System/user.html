@@ -1,0 +1,93 @@
+<extend name="Base/common"/>
+
+<block name="right">
+
+<div class="right" id="right" name="right">
+    <div class="place">
+    	<span>位置：</span>
+    	<ul class="placeul">
+    		<li><a href="{:U('/admin/index/index')}">首页</a></li>
+    		<li><a href="{:U('/admin/system/user')}">管理员设置</a></li>
+    	</ul>
+    </div>
+
+    <div class="rightinfo">    
+	    <div class="tools">	    
+	    	<ul class="toolbar">
+	        <li><a href="{:U('/admin/system/insert_t')}"><span><img src="__PUBLIC__/images/t01.png" /></span>添加</a></li>
+	        </ul>
+	                
+	        <ul class="toolbar1">
+	        </ul>
+	    
+	    </div>
+
+	    <table class="tablelist">
+	    	<thead>
+	    		<tr>
+	    			<th>编号<i class="sort"><img src="__PUBLIC__/images/px.gif" /></i></th>
+	    			<th>标题</th>
+	    			<th>用户</th>
+	    			<th>权限</th>
+	    			<th>操作</th>
+	    		</tr>
+	        </thead>
+	        <tbody>
+	        	<volist name="conf" id="vo">
+	        		<tr>                                    
+	        			<td>{$vo.tid}</td>
+	        			<td>{$vo.t_rname}</td>
+	        			<td>{$vo.t_num}</td>
+	        			<td>{$vo.t_role}</td>
+	        			<td><a href="{:U('/admin/system/delete_t', array('num' => $vo['t_num']))}" class="tablelink">删除</a>     <a href="{:U('/admin/system/details_t',array('tid' => $vo['tid']))}" class="tablelink" >修改</a></td>
+	        		</tr>
+		        </volist> 
+	        </tbody>
+	    </table>      
+    
+	    <div class="tip">
+	    	<div class="tiptop"><span>提示信息</span><a></a></div>
+	        
+	    	<div class="tipinfo">
+		        <span><img src="__PUBLIC__/images/ticon.png" /></span>
+		        <div class="tipright">
+			        <p>是否确认对信息的修改 ？</p>
+			        <cite>如果是请点击确定按钮 ，否则请点取消。</cite>
+		        </div>
+	        </div>
+	        
+	        <div class="tipbtn">
+		        <input name="" type="button"  class="sure" value="确定" />&nbsp;
+		        <input name="" type="button"  class="cancel" value="取消" />
+	        </div>    
+	    </div>     
+    
+    </div>
+
+
+	 <script type="text/javascript">
+		$(document).ready(function(){
+		  $(".click").click(function(){
+		  $(".tip").fadeIn(200);
+		  });
+		  
+		  $(".tiptop a").click(function(){
+		  $(".tip").fadeOut(200);
+		});
+
+		  $(".sure").click(function(){
+		  $(".tip").fadeOut(100);
+		});
+
+		  $(".cancel").click(function(){
+		  $(".tip").fadeOut(100);
+		});
+
+		});
+		
+		$('.tablelist tbody tr:odd').addClass('odd');
+	</script>    
+
+</div>
+
+</block>

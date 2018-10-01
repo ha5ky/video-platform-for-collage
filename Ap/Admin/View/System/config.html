@@ -1,0 +1,80 @@
+ <extend name="Base/common"/>
+
+<block name="right">
+
+<div class="right" id="right" name="right">
+    <div class="place">
+    	<span>位置：</span>
+    	<ul class="placeul">
+    		<li><a href="{:U('/admin/index/index')}">首页</a></li>
+    		<li><a href="{:U('/admin/system/config')}">系统设置</a></li>
+    	</ul>
+    </div>
+
+    <div class="rightinfo">    
+	    <div class="tools">	    
+	    	<ul class="toolbar">
+	        <li><a href="{:U('/admin/system/config_add')}"><span><img src="__PUBLIC__/images/t01.png" /></span>添加</a></li>
+	        </ul>
+	        <ul class="toolbar1">
+
+	        </ul>
+	    
+	    </div>
+
+	    <table class="tablelist">
+	    	<thead>
+		    	<tr>
+			        <th><input name="" type="checkbox" value="" checked="checked"/></th>
+			        <th>编号</th>
+			        <th>参数类型</th>
+			        <th>参数名称</th>
+			        <th>参数定义</th>
+			        <th>父级 ID </th>
+			        <th>操作</th>
+		        </tr>
+	        </thead>
+	        <tbody>
+	        	<volist name="conf" id="vo">
+			        <tr>
+				        <td><input name="" type="checkbox" value="" /></td>
+				        <td>{$vo.conf_id}</td>
+				        <td>{$vo.conf_sort}</td>
+				        <td>{$vo.conf_name}</td>
+				        <td>{$vo.conf_value}</td>
+				        <td>{$vo.conf_pid}</td>
+				        <td><a href="{:U('Admin/System/details_conf',array('id' => $vo['conf_id']))}" class="tablelink">查看</a>     <a href="{:U('Admin/System/delete_conf',array('id' => $vo['conf_id']))}" class="click"> 删除</a></td>
+			        </tr>  
+		        </volist> 
+	        </tbody>
+	    </table>      
+    
+	    
+
+
+	 <script type="text/javascript">
+		$(document).ready(function(){
+		  $(".click").click(function(){
+		  $(".tip").fadeIn(200);
+		  });
+		  
+		  $(".tiptop a").click(function(){
+		  $(".tip").fadeOut(200);
+		});
+
+		  $(".sure").click(function(){
+		  $(".tip").fadeOut(100);
+		});
+
+		  $(".cancel").click(function(){
+		  $(".tip").fadeOut(100);
+		});
+
+		});
+		
+		$('.tablelist tbody tr:odd').addClass('odd');
+	</script>    
+
+</div>
+
+</block>

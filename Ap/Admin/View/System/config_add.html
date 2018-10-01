@@ -1,0 +1,35 @@
+<extend name="Base/common"/>
+
+<block name="right">
+
+<div class="right" id="right" name="right">
+    <div class="place">
+    	<span>位置：</span>
+    	<ul class="placeul">
+    		<li><a href="{:U('/admin/index/index')}">首页</a></li>
+    		<li><a href="{:U('/admin/system/config')}">系统设置</a></li>
+    		<li><a href="{:U('/admin/system/config_add')}">添加参数</a></li>    		
+    	</ul>
+    </div>
+
+    <div class="rightinfo">    
+	    <div class="formbody">	    
+	    	<div class="formtitle"><span>基本信息</span></div>
+	    	<form action="#" method="post">
+		    	<ul class="forminfo">
+		    		<input name="id" type="hidden"  value="" />
+		    		<li><label>参数类型</label><input name="conf_sort" type="text" class="dfinput"  value=""/><i>例如:system</i></li>
+		    		<li><label>参数名称</label><input name="conf_name" type="text" class="dfinput"  value=""/><i>例如:sysname</i></li>
+		    		<li><label>参数定义</label><textarea name="conf_value" cols="" rows="" class="textinput"></textarea></li>
+		    		<li><label>父级 ID </label><input name="conf_pid" type="text" class="dfinput" value=""/><i>例如:0</i></li>
+		    		<li>
+		    			<label>&nbsp;</label><input name="" type="submit" class="btn" value="确认保存"/>
+		    			&nbsp;<a href="{:U('/admin/system/config')}"><input name="" type="button" class="btn" value="取消" /></a>
+		    		</li>
+		    	</ul>    
+			</form>
+	    </div>
+	</div>    
+</div>
+
+</block>

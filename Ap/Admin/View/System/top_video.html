@@ -1,0 +1,104 @@
+<extend name="Base/common"/>
+
+<block name="right">
+
+  <div class="right" id="right" name="right">
+    <div class="place">
+      <span>位置：</span>
+      <ul class="placeul">
+        <li><a href="{:U('/admin/index/index')}">首页</a></li>
+        <li><a href="{:U('/admin/System/top_video')}">视频置顶</a></li>
+      </ul>
+    </div>
+
+    <div class="rightinfo">    
+      <div class="tools">     
+        <ul class="toolbar">
+          
+        </ul>
+
+        <ul class="toolbar1">
+        </ul>
+
+      </div>
+      <form action="{:U('Admin/System/video_operate')}" method="post">
+        <table class="tablelist">
+          <thead>
+           <tr>
+            <!-- <th>编号<i class="sort"><img src="__PUBLIC__/images/px.gif" /></i></th> -->
+            <th>置顶视频</th>
+            <th>时间</th>
+            <th>置于首页</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+
+          <volist name="list" id="vo" key="k">
+            <tr>
+            <td>{$vo.slide_video}</td>
+              <td>{$vo.slide_time|date="Y-m-d",###}</td>
+              <td>{$vo.types}</td>
+              <td>
+                <input type="checkbox" name="checkbox" value="{$vo.slide_id}">
+              </td>
+                    <!-- <td>
+                        <a href="{:U('/admin/admin/update_c',array('sort_id' => $vo['sort_id'],'sort_name' => $vo['sort_name']))}" class="tablelink" >置于首页</a>
+                      </td> -->
+                    </tr>
+                  </volist>
+
+                </tbody>
+
+
+              </table>
+              <br>
+              <label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input name="" type="submit" class="btn" value="确认保存"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>&nbsp;</label><input id="cancel" name="" type="reset" class="btn" value="取消保存"/>
+            </form>
+            <div class="tip">
+              <div class="tiptop"><span>提示信息</span><a></a></div>
+
+              <div class="tipinfo">
+                <span><img src="__PUBLIC__/images/ticon.png" /></span>
+                <div class="tipright">
+                  <p>是否确认对信息的修改 ？</p>
+                  <cite>如果是请点击确定按钮 ，否则请点取消。</cite>
+                </div>
+              </div>
+
+              <div class="tipbtn">
+                <input name="" type="button"  class="sure" value="确定" />&nbsp;
+                <input name="" type="button"  class="cancel" value="取消" />
+              </div>    
+            </div>     
+
+          </div>
+
+
+          <script type="text/javascript">
+            $(document).ready(function(){
+              $(".click").click(function(){
+                $(".tip").fadeIn(200);
+              });
+
+              $(".tiptop a").click(function(){
+                $(".tip").fadeOut(200);
+              });
+
+              $(".sure").click(function(){
+                $(".tip").fadeOut(100);
+              });
+
+              $(".cancel").click(function(){
+                $(".tip").fadeOut(100);
+              });
+
+            });
+
+            $('.tablelist tbody tr:odd').addClass('odd');
+          </script>    
+
+        </div>
+
+      </block>

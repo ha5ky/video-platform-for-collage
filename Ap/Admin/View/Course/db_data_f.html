@@ -1,0 +1,95 @@
+<extend name="Base/common"/>
+
+<block name="right">
+
+<div class="right" id="right" name="right">
+    <div class="place">
+      <span>位置：</span>
+      <ul class="placeul">
+        <li><a href="{:U('/admin/index/index')}">首页</a></li>
+        <li><a href="{:U('/admin/admin/course')}">课程设置</a></li>
+      </ul>
+    </div>
+
+    <div class="rightinfo">    
+      <div class="tools">     
+        <ul class="toolbar">
+          <li><a href="{:U('/admin/admin/insert_f')}"><span><img src="__PUBLIC__/images/t01.png" /></span>添加</a></li>
+          </ul>
+                  
+          <ul class="toolbar1">
+          </ul>
+      
+      </div>
+
+      <table class="tablelist">
+            <thead>
+               <tr>
+                <th>编号<i class="sort"><img src="__PUBLIC__/images/px.gif" /></i></th>
+                <th>名称</th>
+                <th>介绍</th>
+                <th>图片</th>
+                <th>父类id</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="list" id="vo" key="k">
+                <tr>
+                    <td>{$vo.sort_id}</td>
+                    <td>{$vo.sort_name}</td>
+                    <td>{$vo.sort_intro}</td>
+                    <td>{$vo.sort_img}</td>
+                    <td>{$vo.sort_pid}</td>
+                    <td><a href="{:U('/admin/admin/delete_f', array('sort_id' => $vo['sort_id']))}" class="tablelink">删除</a>     <a href="{:U('/admin/admin/details_f',array('sort_id' => $vo['sort_id']))}" class="tablelink" >修改</a></td>
+                </tr>
+            </volist>
+        </tbody>
+    </table>
+    
+      <div class="tip">
+        <div class="tiptop"><span>提示信息</span><a></a></div>
+          
+        <div class="tipinfo">
+            <span><img src="__PUBLIC__/images/ticon.png" /></span>
+            <div class="tipright">
+              <p>是否确认对信息的修改 ？</p>
+              <cite>如果是请点击确定按钮 ，否则请点取消。</cite>
+            </div>
+          </div>
+          
+          <div class="tipbtn">
+            <input name="" type="button"  class="sure" value="确定" />&nbsp;
+            <input name="" type="button"  class="cancel" value="取消" />
+          </div>    
+      </div>     
+    
+    </div>
+
+
+   <script type="text/javascript">
+    $(document).ready(function(){
+      $(".click").click(function(){
+      $(".tip").fadeIn(200);
+      });
+      
+      $(".tiptop a").click(function(){
+      $(".tip").fadeOut(200);
+    });
+
+      $(".sure").click(function(){
+      $(".tip").fadeOut(100);
+    });
+
+      $(".cancel").click(function(){
+      $(".tip").fadeOut(100);
+    });
+
+    });
+    
+    $('.tablelist tbody tr:odd').addClass('odd');
+  </script>    
+
+</div>
+
+</block>

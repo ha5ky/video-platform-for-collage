@@ -1,0 +1,30 @@
+<extend name="Base/common"/>
+
+<block name="right">
+
+<div class="right" id="right" name="right">
+    <div class="place">
+    	<span>位置：</span>
+    	<ul class="placeul">
+            <li><a href="{:U('/admin/index/index')}">首页</a></li>
+            <li><a href="{:U('/admin/system/config')}">系统设置</a></li>
+            <li><a href="#">参数修改</a></li>
+        </ul>
+    </div>
+    <div class="formbody">
+    <div class="formtitle"><span>基本信息</span></div>
+        <form action="{:U('admin/system/update_conf')}" method="post" enctype="multipart/form-data">  <!-- 插入数据到数据库-->
+            <ul class="forminfo">
+                <li><label>id</label><input name="conf_id" type="text" class="dfinput" value="{$conf_id}" readonly="" /><i></i></li>
+                <li><label>名称</label><input name="name" type="text" class="dfinput" /><i></i></li>
+                <li><label>介绍</label><textarea name="value" cols="" rows="" class="textinput"></textarea></li>
+                <li><label>分类</label><input name="sort" type="text" class="dfinput" /><i></i></li>
+                <li><label>父类id</label><input name="pid" type="text" class="dfinput" value="" /></li>
+               <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="确认保存"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>&nbsp;</label><input id="cancel" name="" type="reset" class="btn" value="取消保存"/></li>
+            </ul>
+         </form>
+    </div>
+
+</div>
+
+</block>

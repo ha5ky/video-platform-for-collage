@@ -1,0 +1,85 @@
+<extend name="Base/common"/>
+
+<block name="right">
+
+<div class="right" id="right" name="right">
+    <div class="place">
+        <span>位置：</span>
+        <ul class="placeul">
+            <li><a href="{:U('/admin/index/index')}">首页</a></li>
+            <li><a href="{:U('/admin/teacher/materials')}">课程材料设置</a></li>
+            <li><a href="#">添加参数</a></li>
+        </ul>
+    </div>
+
+    <div class="formbody">
+    <div class="formtitle"><span>基本信息</span></div>
+        <form id="form1" action="{:U('admin/teacher/insert_materials')}" method="post" enctype="multipart/form-data">  <!-- 插入数据到数据库-->
+            <ul class="forminfo">
+                <li><label>课程名</label><input name="sort_name" type="text" class="dfinput" /><i></i></li>
+                <li><label>视频名</label><input name="v_name" type="text" class="dfinput" /><i></i></li>
+                <li><label>视频简介</label><input name="v_intro" type="text" class="dfinput" /><i></i></li>
+                <li><label>章节名</label><input name="c_name" type="text" class="dfinput" value="" /></li>
+                <li><label>任课教师</label><input name="t_rname" type="text" class="dfinput" value="" /></li>
+                <li><label>课程图片</label><input name="v_pic" type="file" value="" /></li>
+                <!-- <input name="t_src" type="text" class="dfinput" value="" readonly="readonly" /> -->
+                <br>
+                <div style="width: 60%;">
+                    <!-- 加载编辑器的容器 -->
+                    <!-- <script id="container" name="content" type="text/plain">
+                        请上传的你的视频
+                    </script> -->
+                    <!-- 配置文件 -->
+                    <script type="text/javascript" src="__PUBLIC__/Ueditor/ueditor.config.js"></script>
+                    <!-- 编辑器源码文件 -->
+                    <script type="text/javascript" src="__PUBLIC__/Ueditor/ueditor.all.js"></script>
+                    <textarea id="container" name="container"></textarea>
+                    <!-- 实例化编辑器 -->
+                    <script type="text/javascript">
+                        var ue = UE.getEditor('container').getContent();
+                        // var html = ue.getContent();
+                        // $.ajax({  
+                        //        type: "POST",  
+                        //        url: "{:U('admin/teacher/insert_materials')}",  
+                        //        data:html,  
+                        //        timeout:2000,  
+                        //        cache:true,  
+                        //        success: function(data){  
+                        //           alert(data);  
+                        //            //$("p.prise-data").html({$zan_info}+1+'个赞');  
+                        //        }  
+                        //     });  
+                        // $.ajax({
+                        //     type = "post",
+                        //     url = "{:U('admin/teacher/insert_materials')}",
+                        //     data : html,
+
+                        // });
+                    </script>
+                </div>
+                <br>
+                <li><label>&nbsp;</label><input name="submit" type="submit" class="btn" value="确认保存"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>&nbsp;</label><input id="cancel" name="" type="reset" class="btn" value="取消保存"/></li>
+            </ul>
+         </form>
+        <!-- <script type="text/javascript">
+            function btnsubmit()
+            {
+                // var i = $("#ue").val();
+                // alert(i);
+                // var src = i.('video').src;
+                var html = ue.getContent();
+                Regex re = new Regex(@"(^//.|^/|^[a-zA-Z])?:?/.+(/$)?");
+                MatchCollection mc = re.Matches(html);
+                alert(mc);
+                // alert(html);
+                // alert(html.video.src);
+                // $('#form1').submit();
+            }
+        </script> -->
+    </div>
+
+</div>
+
+
+
+</block>

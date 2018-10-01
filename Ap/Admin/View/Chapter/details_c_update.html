@@ -1,0 +1,32 @@
+<extend name="Base/common"/>
+
+<block name="right">
+
+<div class="right" id="right" name="right">
+    <div class="place">
+    	<span>位置：</span>
+    	<ul class="placeul">
+    		<li><a href="{:U('/admin/index/index')}">首页</a></li>
+            <li><a href="{:U('/admin/admin/details_c')}">章节设置</a></li>
+            <li><a href="#">修改参数</a></li>
+    	</ul>
+    </div>
+    <div class="formbody">
+        <div class="formtitle"><span>基本信息</span></div>
+        <form id="form1" action="{:U('/admin/admin/update_chapter')}" method="post">  <!-- 插入数据到数据库-->
+            <ul class="forminfo">
+                <li><label>ID</label><input name="sort_id" type="text" value="{$id}" class="dfinput" readonly="" /><i></i></li>
+                <li><label>科目</label><input name="sort_name" type="text" class="dfinput" /><i></i></li>
+                <li><label>介绍</label><input name="sort_intro" type="text" class="dfinput" value="" /></li>
+                <li><label>教师名称</label><input name="t_rname" type="text" class="dfinput" value="" /></li>
+                <li><label>章节名称</label><input name="c_name" type="text" class="dfinput" value="" /></li>
+                <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="确认保存"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>&nbsp;</label><input id="cancel" name="" type="reset" class="btn" value="取消保存"/></li>
+            </ul>
+        </form>
+
+    </div>
+
+</div>
+
+
+</block>

@@ -1,0 +1,99 @@
+<extend name="Base/common"/>
+
+<block name="right">
+
+<div class="right" id="right" name="right">
+    <div class="place">
+    	<span>位置：</span>
+    	<ul class="placeul">
+    		<li><a href="{:U('/admin/index/index')}">首页</a></li>
+    		<li><a href="{:U('/admin/teacher/count_t')}">数据统计</a></li>
+    	</ul>
+    </div>
+
+    <div class="rightinfo">    
+	    <div class="tools">	    
+	    	<ul class="toolbar">
+	        
+	        </ul>
+	                
+	        <ul class="toolbar1">
+	        </ul>
+	    
+	    </div>
+
+	    <table class="tablelist">
+	    	<thead>
+	    		<tr>
+	    			<th>编号<i class="sort"><img src="__PUBLIC__/images/px.gif" /></i></th>
+	    			<th>视频名称</th>
+	    			<th>视频介绍</th>
+	    			<th>上传时间</th>
+	    			<th>视频状态</th>
+	    			<th>观看次数</th>
+	    			<!-- <th>操作</th> -->
+	    		</tr>
+	        </thead>
+	        <tbody>
+	        	<volist name="list" id="vo">
+	        		<tr>                                    
+	        			<td>{$vo.vid}</td>
+	        			<td>{$vo.v_name}</td>
+	        			<td>{$vo.v_intro}</td>
+	        			<td>{$vo.v_time}</td>
+	        			<td>{$vo.v_status}</td>
+	        			<td>{$vo.count}</td>
+	        			<td>
+	        			<!-- <a href="{:U('/admin/teacher/delete_count', array('id' => $vo['vid']))}" class="tablelink">删除</a>      -->
+	        			<!-- <a href="{:U('/admin/teacher/details_count',array('vid' => $vo['vid'],'name' => $vo['v_name'],'intro' => $vo['v_intro'],'time' => $vo['v_time'],'status' => $vo['v_status']))}" class="tablelink" >查看</a></td> -->
+	        		</tr>
+		        </volist> 
+	        </tbody>
+	    </table>      
+    
+	    <div class="tip">
+	    	<div class="tiptop"><span>提示信息</span><a></a></div>
+	        
+	    	<div class="tipinfo">
+		        <span><img src="__PUBLIC__/images/ticon.png" /></span>
+		        <div class="tipright">
+			        <p>是否确认对信息的修改 ？</p>
+			        <cite>如果是请点击确定按钮 ，否则请点取消。</cite>
+		        </div>
+	        </div>
+	        
+	        <div class="tipbtn">
+		        <input name="" type="button"  class="sure" value="确定" />&nbsp;
+		        <input name="" type="button"  class="cancel" value="取消" />
+	        </div>    
+	    </div>     
+    
+    </div>
+
+
+	 <script type="text/javascript">
+		$(document).ready(function(){
+		  $(".click").click(function(){
+		  $(".tip").fadeIn(200);
+		  });
+		  
+		  $(".tiptop a").click(function(){
+		  $(".tip").fadeOut(200);
+		});
+
+		  $(".sure").click(function(){
+		  $(".tip").fadeOut(100);
+		});
+
+		  $(".cancel").click(function(){
+		  $(".tip").fadeOut(100);
+		});
+
+		});
+		
+		$('.tablelist tbody tr:odd').addClass('odd');
+	</script>    
+
+</div>
+
+</block>

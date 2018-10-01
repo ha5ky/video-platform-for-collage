@@ -1,0 +1,33 @@
+.leftmenus{
+   {
+	width:180px;
+	margin:0 auto;
+	background:#fff;
+	position:relative;
+	z-index:0;
+	padding:60px 20px 70px;}
+ul li{
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	border-bottom:1px solid #F8F8F8;}	
+ul li a {
+	color:#666;
+	display:block;}	
+ul li a:hover {
+	color:#FF5F3E;
+	text-decoration:none;}	
+ul li a.hover {color:#FF5F3E;}	
+#lanPos{
+	margin-top: 0px;
+	width:225px;
+	height:40px;
+	line-height:40px;
+	background:#F8F8F8;
+	border-right:5px solid #FF5F3E;
+	position:absolute;
+	left:-5px;
+	top:0;
+	z-index:-1;
+	transition:top .2s;}	
+}

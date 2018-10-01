@@ -1,0 +1,45 @@
+<extend name="Base/common"/>
+
+<block name="right">
+
+<div class="right" id="right" name="right">
+    <div class="place">
+    	<span>位置：</span>
+    	<ul class="placeul">
+    		<li><a href="{:U('/admin/index/index')}">首页</a></li>
+    		<li><a href="{:U('/admin/system/top')}">数据置顶</a></li>
+    	</ul>
+    </div>
+    <div class="rightinfo">    
+	    <div class="formbody">	    
+	    	<div class="formtitle"><span>基本信息</span></div>
+	    	<form action="{:U('/admin/system/top_operate')}" method="post" enctype="multipart/form-data">
+		    	<ul class="forminfo">
+		    		<input name="id" type="hidden"  value="" />
+		    		<li><label>置顶课程1</label><input name="top_c1" type="text" class="dfinput"  value=""/><i>例如:高数</i></li>
+		    		<!-- <li><label>课程缩略图</label><input name="top_c1_pic" type="file" value=""/></li> -->
+		    		<li><label>置顶课程2</label><input name="top_c2" type="text" class="dfinput"  value=""/><i>例如:高数</i></li>
+		    		<!-- <li><label>课程缩略图</label><input name="top_c2_pic" type="file" value=""/></li> -->
+		    		<li><label>置顶课程3</label><input name="top_c3" type="text" class="dfinput"  value=""/><i>例如:高数</i></li>
+		    		<!-- <li><label>课程缩略图</label><input name="top_c3_pic" type="file" value=""/></li> -->
+		    		<li><label>置顶课程4</label><input name="top_c4" type="text" class="dfinput"  value=""/><i>例如:高数</i></li>
+		    		<!-- <li><label>课程缩略图</label><input name="top_c4_pic" type="file" value=""/></li> -->
+		    		<li><label>置顶课程5</label><input name="top_c5" type="text" class="dfinput"  value=""/><i>例如:高数</i></li>
+		    		<!-- <li><label>课程缩略图</label><input name="top_c5_pic" type="file" value=""/></li> -->
+		    		<li><label>首页标题</label><input name="top_conf" type="text" class="dfinput"  value=""/><i>例如:sysname</i></li>
+		    		<li><label>页眉</label><input name="head" type="text" class="dfinput"  value=""/></li>
+		    		<li><label>版权信息</label><input name="f_foot" type="text" class="dfinput"  value=""/></li>
+		    		<li><label>后端页脚</label><input name="m_foot" type="text" class="dfinput"  value=""/></li>
+		    		<li><label>首页logo</label><input name="top_logo" type="file" value=""/></li>
+		    		
+		    		<li>
+		    			<label>&nbsp;</label><input name="" type="submit" class="btn" value="确认保存"/>
+		    			&nbsp;<input name="" type="reset" class="btn" value="取消" /></a>
+		    		</li>
+		    	</ul>    
+			</form>
+	    </div>
+	</div>    
+</div>
+
+</block>

@@ -1,0 +1,80 @@
+<extend name="Base/common"/>
+
+<block name="right">
+
+<div class="right" id="right" name="right">
+    <div class="place">
+    	<span>位置：</span>
+    	<ul class="placeul">
+    		<li><a href="{:U('/admin/index/index')}">首页</a></li>
+    		<li><a href="{:U('/admin/system/config')}">系统设置</a></li>
+    	</ul>
+    </div>
+
+    <div class="rightinfo">    
+	    <div class="tools">	    
+	    	<ul class="toolbar">
+	        </ul>
+	                
+	        <ul class="toolbar1">
+	        </ul>
+	    
+	    </div>
+
+	    <table class="tablelist">
+            <thead>
+               <tr>
+                <th>编号<i class="sort"><img src="__PUBLIC__/images/px.gif" /></i></th>
+                <th>时间</th>
+                <th>地点</th>
+                <th>人物</th>
+                <th>事件</th>
+                <th>结果</th>
+                <!-- <th>操作</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="list" id="vo">
+                <tr>
+                    <td>{$vo.log_id}</td>
+                    <td>{$vo.log_time}</td>
+                    <td>{$vo.log_where}</td>
+                    <td>{$vo.log_who}</td>
+                    <td>{$vo.log_what}</td>
+                    <td>{$vo.log_how}</td>
+                    
+
+                </tr>
+            </volist>
+
+        </tbody>
+    </table>
+    {$page}
+
+
+	 <script type="text/javascript">
+		$(document).ready(function(){
+		  $(".click").click(function(){
+		  $(".tip").fadeIn(200);
+		  });
+		  
+		  $(".tiptop a").click(function(){
+		  $(".tip").fadeOut(200);
+		});
+
+		  $(".sure").click(function(){
+		  $(".tip").fadeOut(100);
+		});
+
+		  $(".cancel").click(function(){
+		  $(".tip").fadeOut(100);
+		});
+
+		});
+		
+		$('.tablelist tbody tr:odd').addClass('odd');
+	</script>    
+
+</div>
+
+</block>

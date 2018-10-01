@@ -1,0 +1,94 @@
+<extend name="Base/common"/>
+
+<block name="right">
+<script type="text/javascript">
+  $(document).ready(function(e){
+    $(".select1").uedSelect({
+      with:345
+    });
+  })
+</script>
+
+  <div class="right" id="right" name="right">
+    <div class="place">
+      <span>位置：</span>
+      <ul class="placeul">
+        <li><a href="{:U('/admin/index/index')}">首页</a></li>
+        <li><a href="{:U('/admin/admin/chapter')}">章节设置</a></li>
+        <li><a href="#">修改参数</a></li>
+      </ul>
+    </div>
+
+    <div class="rightinfo">
+    </div>
+    
+    <div class="formbody">
+     <form id="form1" action="{:U('/admin/admin/details_c')}" method="post">  <!-- 插入数据到数据库 -->
+      <ul class="forminfo">
+        <li><label>科目</label>
+          <div class="vocation">
+            <select name="course_name" class="select1" id="">
+              <foreach name="list" item="ite">
+              <option selected="selected" value="{$ite.sort_name}">{$ite.sort_name}</option>
+                <!-- <option value="222222">22222</option> -->
+              </foreach>
+            </select></div>
+          </li>
+        </ul>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="submit" class="btn" name="" value="确定">
+      </form>
+      <div class="tools">
+        <ul class="toolbar">
+          <!-- <li><a href="{:U('/admin/admin/insert_c')}"><span><img src="__PUBLIC__/images/t01.png" /></span>添加</a></li> -->
+        </ul>
+
+        <ul class="toolbar1">
+        </ul>
+
+      </div>
+      <div id="refresh">
+      <table class="tablelist">
+        <thead>
+         <tr>
+          <th>编号<i class="sort"><img src="__PUBLIC__/images/px.gif" /></i></th>
+          <th>名称</th>
+          <th>教师名称</th>
+          <th>介绍</th>
+          <th>图片</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <volist name="list1" id="vo" key="k">
+          <tr>
+            <td>{$vo.sort_id}</td>
+            <td>{$vo.sort_name}</td>
+            <td>{$vo.t_rname}</td>
+            <td>{$vo.sort_intro}</td>
+            <td>{$vo.sort_img}</td>
+            <td>
+              <a href="{:U('/admin/admin/delete_c', array('sort_id' => $vo['sort_id']))}" class="tablelink">删除</a>
+              <a href="{:U('/admin/admin/update_c',array('sort_id' => $vo['sort_id'],'sort_name' => $vo['sort_name']))}" class="tablelink" >修改</a>
+              <a href="{:U('/admin/admin/sticky',array('sort_id' => $vo['sort_id']))}" class="tablelink" >置顶</a>
+            </td>
+          </tr>
+        </volist>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+</div>
+<script type="text/javascript">
+function Refresh(){
+  $.ajax({
+    async:false,
+    url: "{:U('/admin/admin/details_c')}",
+    type:"post",
+
+  });
+}
+</script>
+
+
+</block>

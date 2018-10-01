@@ -1,0 +1,89 @@
+<div class="content">
+<block name="left">
+  <div class="left">    
+    <dl class="leftmenu">        
+    <dd>
+        <div class="title">
+            <span><img src="__PUBLIC__/images/leftico01.png" /></span>系统设置
+        </div>
+        <ul class="menuson" style="display:<?php echo c_menu(ACTION_NAME)=='0'?'block':'none';?>;">
+            <li class="<?php echo ACTION_NAME=='top'?'active':'' ?>"><cite></cite><a href="{:U('/admin/system/top')}">首页置顶数据设置</a><i></i></li>
+            <li class="<?php echo ACTION_NAME=='top_video'?'active':'' ?>"><cite></cite><a href="{:U('/admin/system/top_video')}">首页推荐幻灯设置</a><i></i></li>
+            <li class="<?php echo ACTION_NAME=='config'?'active':'' ?>"><cite></cite><a href="{:U('/admin/system/config')}">动态参数</a><i></i></li>
+            <li class="<?php echo ACTION_NAME=='user'?'active':'' ?>"><cite></cite><a href="{:U('/admin/system/user')}">管理员列表</a><i></i></li>
+            <li class="<?php echo ACTION_NAME=='red_log'?'active':'' ?>"><cite></cite><a href="{:U('/admin/system/red_log')}">系统日志</a><i></i></li>
+        </ul>
+    </dd>
+        
+    <dd>
+        <div class="title">
+        <span><img src="__PUBLIC__/images/leftico02.png" /></span>管理员功能
+        </div>
+        <ul class="menuson" style="display:<?php echo c_menu(ACTION_NAME)=='1'?'block':'none';?>;">
+            <li class="<?php echo ACTION_NAME=='teacher'?'active':'' ?>"><cite></cite><a href="{:U('/admin/admin/teacher')}">教师设置</a><i></i></li>
+            <li class="<?php echo ACTION_NAME=='course'?'active':'' ?>"><cite></cite><a href="{:U('/admin/admin/course')}">课程设置</a><i></i></li>
+            <li class="<?php echo ACTION_NAME=='chapter'?'active':'' ?>"><cite></cite><a href="{:U('/admin/admin/chapter')}">章节设置</a><i></i></li>
+            <li class="<?php echo ACTION_NAME=='student'?'active':'' ?>"><cite></cite><a href="{:U('/admin/admin/student')}">学生设置</a><i></i></li>
+            <li class="<?php echo ACTION_NAME=='count'?'active':'' ?>"><cite></cite><a href="{:U('/admin/admin/count')}">统计数据</a><i></i></li>
+        </ul>
+    </dd> 
+    
+    
+    <dd><div class="title"><span><img src="__PUBLIC__/images/leftico03.png" /></span>教师功能</div>
+        <ul class="menuson" style="display:<?php echo c_menu(ACTION_NAME)=='2'?'block':'none';?>;">
+            <li class="<?php echo ACTION_NAME=='materials'?'active':'' ?>"><cite></cite><a href="{:U('/admin/teacher/materials')}">课程材料</a><i></i></li>
+            <li class="<?php echo ACTION_NAME=='count_t'?'active':'' ?>"><cite></cite><a href="{:U('/admin/teacher/count_t')}">统计数据</a><i></i></li>
+            <li class="<?php echo ACTION_NAME=='comment'?'active':'' ?>"><cite></cite><a href="{:U('/admin/teacher/comment')}">评论管理</a><i></i></li>
+        </ul>    
+    </dd>  
+    
+    
+    <dd><div class="title"><span><img src="__PUBLIC__/images/leftico04.png" /></span>其他功能</div>
+        <ul class="menuson" style="display:<?php echo c_menu(ACTION_NAME)=='3'?'block':'none';?>;">
+            <li class="<?php echo ACTION_NAME=='newPwd'?'active':'' ?>"><cite></cite><a href="{:U('/admin/other/newPwd')}">修改密码</a><i></i></li>
+            <li class="<?php echo ACTION_NAME=='logout'?'active':'' ?>"><cite></cite><a href="{:U('/admin/public/logout')}">安全退出</a><i></i></li>           
+        </ul>    
+    </dd>   
+    
+    </dl>
+    </div>
+</block>
+
+<block name="right">
+    <div class="right" id="right" name="right">
+        <div class="place">
+            <span>位置：</span>
+            <ul class="placeul">
+                <li><a href="#">首页</a></li>
+            </ul>
+        </div>
+
+
+        <div class="mainindex">
+
+            <div class="welinfo">
+                <span><img src="__PUBLIC__/images/sun.png" alt="天气" /></span>
+                <b>早上好，欢迎使用信息管理系统，当前登录账号：<?php echo session('user_name'); ?></b>
+            </div>
+
+            <div class="welinfo">
+                <span><img src="__PUBLIC__/images/time.png" alt="时间" /></span>
+                <i>您上次登录的时间：{$time|date="Y-m-d H:i:s",###}</i>
+            </div>
+
+            <div class="xline"></div>
+            <div class="box"></div>
+
+            <div class="welinfo">
+                <span><img src="__PUBLIC__/images/dp.png" alt="提醒" /></span>
+                <b>此信息管理系统版权说明</b>
+            </div>
+
+            <ul class="infolist">
+                <li><span>系统版权说明</span></li>
+            </ul>
+
+        </div>
+    </div>
+</block>   
+</div>

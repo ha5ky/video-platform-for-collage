@@ -1,0 +1,33 @@
+<extend name="Base/common"/>
+
+<block name="right">
+
+<div class="right" id="right" name="right">
+    <div class="place">
+        <span>位置：</span>
+        <ul class="placeul">
+            <li><a href="{:U('/admin/index/index')}">首页</a></li>
+            <li><a href="{:U('/admin/teacher/comment')}">评论管理</a></li>
+            <li><a href="#">查看参数</a></li>
+        </ul>
+    </div>
+
+    <div class="formbody">
+    <div class="formtitle"><span>基本信息</span></div>
+        <form id="form1" action="{:U('admin/teacher/update_com')}" method="post">  <!-- 插入数据到数据库-->
+            <ul class="forminfo">
+                <li><label>ID</label><input name="id" type="text" value="{$com_id}" readonly="" class="dfinput" /><i></i></li>
+                <li><label>评论</label><input name="c_num" type="text" value="{$com_content}" readonly="" class="dfinput" /><i></i></li>
+                <li><label>评论时间</label><input name="time" type="text" value="{$com_time|date='Y-m-d,H:i:s',###}" readonly="" class="dfinput" value="" /></li>
+                <li><label>审核状态</label><input name="sta" type="text" value="{$com_status}" class="dfinput" value="" /></li>
+                <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="确认保存"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>&nbsp;</label><input id="cancel" name="" type="reset" class="btn" value="取消保存"/></li>
+            </ul>
+         </form>
+    
+    </div>
+
+</div>
+
+
+
+</block>

@@ -1,0 +1,31 @@
+<extend name="Base/common"/>
+
+<block name="right">
+
+<div class="right" id="right" name="right">
+    <div class="place">
+    	<span>位置：</span>
+    	<ul class="placeul">
+    		<li><a href="{:U('/admin/index/index')}">首页</a></li>
+    		<li><a href="#">修改参数</a></li>
+    	</ul>
+    </div>
+    <div class="formbody">
+    <div class="formtitle"><span>基本信息</span></div>
+        <form id="form1" action="{:U('/admin/other/update_p')}" method="post">  <!-- 插入数据到数据库-->
+            <ul class="forminfo">
+                <li><label>tid</label><input name="tid" type="text" value="{$id}" class="dfinput" readonly="" /><i></i></li>
+                <li><label>姓名</label><input name="t_rname" type="text" value="{$name}" class="dfinput" readonly="" /><i></i></li>
+                <li><label>工号</label><input name="t_num" type="text" class="dfinput" value="{$num}" readonly="" /></li>
+                <li><label>密码修改</label><input name="t_pwd" type="password" class="dfinput" /></li>
+                <li><label>确认密码</label><input name="confirm_pwd" type="password" class="dfinput"  /></li>
+                <li><label></label><input name="" type="submit" class="btn" value="确认保存"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>&nbsp;</label><input id="cancel" name="" type="reset" class="btn" value="取消保存"/></li>
+            </ul>
+        </form>
+
+    </div>
+
+</div>
+
+
+</block>
